@@ -29,6 +29,7 @@
 
     /* transitions */
     --transition-alpha: .1s;
+    --transition-beta: .5s;
 
     /* Whitespace */
     --global-baseline: 5px;
@@ -330,15 +331,29 @@ input::placeholder {
 }
 
 .c-app__logo {
+    color: var(--global-text-white);
+    font-size: 15;
+    line-height: 21px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
     background-color: var(--global-color-neutral-xx-dark);
+    width: 260px;
+    padding: var(--global-whitespace-lg) 0px var(--global-whitespace-lg) var(--global-whitespace-md);
 }
 
 .c-app__topbar {
     background-color: white;
+    box-shadow: 0 0 rgba(0, 0, 0, 0.04);
 }
 
 .c-app__sidebar {
+    color: var(--global-text-white);
     background-color: var(--global-color-neutral-x-dark);
+    width: 260px;
+}
+
+.c-app__main{
+    box-shadow: rgba(0, 0, 0, 0.04);
 }
 
 @media (min-width: 992px) {
@@ -348,6 +363,83 @@ input::placeholder {
         grid-template-rows: auto 1fr;
     }
 }
+
+/*
+    Component: Nav
+    ---
+    Website main navigation
+*/
+
+.c-main-nav__list {
+    padding: 0;
+}
+
+.c-main-nav__list-item {
+    padding: 17px 25px;
+    transition: var(--transition-beta);
+}
+
+.c-main-nav__link{
+    display: flex;
+    align-items: center;
+}
+
+.c-main-nav__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    fill: var(--global-color-neutral);
+    transition: var(--transition-beta);
+}
+
+.c-main-nav__link,
+.c-main-nav__link:visited,
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.c-main-nav__link:active {
+    font-size: 15px;
+    line-height: 19px;
+    color: var(--global-text-white);
+    text-decoration: none;
+}
+
+/* Hover */
+.c-main-nav__list-item{
+    position: relative;
+    
+}
+
+.c-main-nav__list-item:hover{
+    background-color: rgba(0,0,0,.1);
+    transition: var(--transition-beta);
+    
+}
+.is-selected {
+    background-color: rgba(0,0,0,.1);
+}
+
+.c-main-nav__list-item:hover .c-main-nav__icon,
+.is-selected .c-main-nav__icon {
+    fill: var(--global-text-purple);
+}
+
+.c-main-nav__list-item::after{
+    content: "";
+    width: 4px;
+    background: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: .7s;
+}
+
+.is-selected::after,
+.c-main-nav__list-item:hover::after {
+    background: var(--global-text-purple);
+    
+}
+
 
 /*------------------------------------*\
 #UTILITIES
