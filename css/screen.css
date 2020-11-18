@@ -32,11 +32,20 @@
 
     /* Whitespace */
     --global-baseline: 5px;
-    --global-whitespace-xs: calc(var(--global-baseline) * 2);
-    --global-whitespace-sm: calc(var(--global-baseline) * 3);
-    --global-whitespace-md: calc(var(--global-baseline) * 4);
-    --global-whitespace-lg: calc(var(--global-baseline) * 5);
-    --global-whitespace-xl: calc(var(--global-baseline) * 6);
+    --global-whitespace-xxs: var(--global-baseline); /* = 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* = 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* = 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* = 25px */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 30px */
+
+    /* Text Colors */
+    --global-text-white: #FFFFFF;
+    --global-text-green: #3CC480;
+    --global-text-red: #FF6565;
+    --global-text-blue: #3B86FF;
+    --global-text-purple: #A3A0FB;
+    --global-text-cyan: #54D8FF;
 }
 
 /*------------------------------------*\
@@ -50,7 +59,7 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     font-family: "source-sans-pro", Helvetica, arial, sans-serif;
     color: var(--global-color-neutral-dark);
@@ -114,20 +123,21 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -135,8 +145,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -146,7 +156,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
