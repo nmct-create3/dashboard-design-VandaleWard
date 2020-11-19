@@ -347,10 +347,21 @@ input::placeholder {
 }
 
 .c-app__sidebar {
+    position: sticky;
+    top: calc(var(--global-baseline) * 14);
     color: var(--global-text-white);
     background-color: var(--global-color-neutral-x-dark);
     width: 260px;
+    height: calc(100vh - (var(--global-baseline) * 14));
+    overflow: auto;
 }
+
+.c-app__topbar,
+.c-app__logo{
+    position: sticky;
+    top: 0;
+}
+
 
 .c-app__main{
     box-shadow: rgba(0, 0, 0, 0.04);
