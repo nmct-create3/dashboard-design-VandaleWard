@@ -388,6 +388,11 @@ input::placeholder {
 .c-main-nav__list-item {
     padding: 17px 25px;
     transition: var(--transition-beta);
+    transform: translateX(-10px);
+    transition: transform var(--transition-beta);
+}
+.c-main-nav__list-item:hover{
+    transform: translateX(0px);
 }
 
 .c-main-nav__link{
